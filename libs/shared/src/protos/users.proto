@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package users;
+
+import "google/protobuf/empty.proto";
+
+service UsersService{
+  rpc FindAll(google.protobuf.Empty) returns (FindAllResponse);
+  rpc FindById(FindByIdRequest) returns (FindByIdResponse);
+  rpc FindByPhone(FindByPhoneRequest) returns (FindByPhoneResponse);
+  rpc Create(CreateUserRequest) returns (CreateUserResponse);
+  rpc Update(UpdateUserRequest) returns (UpdateUserResponse);
+  rpc Delete(DeleteUserRequest) returns (DeleteUserResponse);
+}
+
+message User{
+  string phone=1;
+  string password = 2;
+  string createdAt = 3;
+}
+
+message FindAllResponse{
+  repeated User users=1;
+}
+
+message FindByIdRequest {
+  string id =1;
+}
+
+message FindByIdResponse{
+  User user = 1;
+}
+
+message FindByPhoneRequest{
+  string phone = 1;
+}
+
+message FindByPhoneResponse{
+  User user = 1;
+}
+
+message CreateUserRequest{
+  string phone = 1;
+  string password = 2;
+}
+
+message CreateUserResponse {
+  User user = 1;
+}
+
+message UpdateUserRequest{
+  string id = 1;
+  User data = 2;
+}
+
+message UpdateUserResponse {
+  bool success = 1;
+  User user = 2;
+}
+
+message DeleteUserRequest{
+  string id = 1;
+}
+
+message DeleteUserResponse {
+  bool success = 1;
+}
