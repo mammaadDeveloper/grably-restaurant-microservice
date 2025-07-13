@@ -1,0 +1,26 @@
+{
+  "name": "@grably-restaurant-microservice/users-service-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@grably-restaurant-microservice/users-service"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/users-service-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@grably-restaurant-microservice/users-service:build",
+          "@grably-restaurant-microservice/users-service:serve"
+        ]
+      }
+    }
+  }
+}
