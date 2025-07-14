@@ -15,14 +15,14 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-"tasksRunnerOptions": {
-  "default": {
-    "runner": "@nx/workspace/tasks-runners/default",
-    "options": {
-      "cacheableOperations": ["build", "lint", "test", "serve"]
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nx/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "serve"]
+      }
     }
-  }
-},
+  },
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
@@ -59,7 +59,11 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/api-gateway-e2e/**/*", "apps/users-service-e2e/**/*"]
+      "exclude": [
+        "apps/api-gateway-e2e/**/*",
+        "apps/users-service-e2e/**/*",
+        "apps/auth-service-e2e/**/*"
+      ]
     }
   ],
   "targetDefaults": {
