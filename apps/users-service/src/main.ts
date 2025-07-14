@@ -1,3 +1,5 @@
+import 'reflect-metadata';
+
 /**
  * This is not a production server yet!
  * This is only a minimal backend to get started.
@@ -20,20 +22,20 @@ async function bootstrap() {
   const port = config.get<number>('app.port', 3001);
 
   // Microservice
-  // app.connectMicroservice<MicroserviceOptions>({
-  //   transport: Transport.GRPC,
-  //   options: {
-  //     package: 'users',
-  //     protoPath: join(__dirname, '../../../libs/shared/src/protos/users.proto'),
-  //     url: '0.0.0.0:50051'
-  //   }
-  // });
-  // await app.startAllMicroservices();
+  app.connectMicroservice<MicroserviceOptions>({
+    transport: Transport.GRPC,
+    options: {
+      package: 'users',
+      protoPath: join(__dirname, '../../../libs/shared/src/protos/users.proto'),
+      url: '0.0.0.0:50051'
+    }
+  });
+  await app.startAllMicroservices();
 
   // Run
   await app.listen(port);
   Logger.log(
-    `🚀 Users application is running on: http://localhost:${port}`
+    `🚀 Users application is running on: http://0.0.0.0:${port}`
   );
 }
 

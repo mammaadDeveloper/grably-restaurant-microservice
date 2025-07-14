@@ -23,7 +23,7 @@ import { CqrsModule } from '@nestjs/cqrs';
         autoLoadEntities: true,
       }),
     }),
-    CqrsModule,
+    CqrsModule.forRoot(),
     UsersModule,
   ],
   controllers: [],

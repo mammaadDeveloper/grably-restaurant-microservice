@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start:gateway": "nx serve api-gateway",
+    "reset": "nx reset",
+    "serve:gateway": "nx serve api-gateway",
+    "serve:users": "nx serve users-service",
     "commit": "cz"
   },
   "private": true,

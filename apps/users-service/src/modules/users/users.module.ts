@@ -2,7 +2,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 
 import { UsersController } from './users.controller';
-import { UsersRepository, UsersService } from './infrastructure';
+import { UsersService } from './infrastructure';
 import { UsersEntity } from './domain/users.entity';
 import {
   CreateUserHandler,
@@ -16,8 +16,14 @@ const commands = [CreateUserHandler, UpdateUserHandler, DeleteUserHandler];
 const queries = [FindAllUserHandler, FindUserByIdHandler, FindUserByPhoneHandler];
 
 @Module({
-  imports: [TypeOrmModule.forFeature([UsersEntity])],
+  imports: [
+    TypeOrmModule.forFeature([UsersEntity]),
+  ],
   controllers: [UsersController],
-  providers: [...commands, ...queries, UsersService, UsersRepository],
+  providers: [
+    ...commands,
+    ...queries,
+    UsersService,
+  ]
 })
 export class UsersModule {}

@@ -5,6 +5,11 @@ module.exports = {
   output: {
     path: join(__dirname, 'dist'),
   },
+  resolve: {
+    alias: {
+      typeorm: 'typeorm/dist/index.js',
+    },
+  },
   plugins: [
     new NxAppWebpackPlugin({
       target: 'node',
@@ -13,7 +18,7 @@ module.exports = {
       tsConfig: './tsconfig.app.json',
       optimization: false,
       outputHashing: 'none',
-      generatePackageJson: true,
+      generatePackageJson: false,
     }),
   ],
 };

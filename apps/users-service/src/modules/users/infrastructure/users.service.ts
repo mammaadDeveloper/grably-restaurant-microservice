@@ -1,15 +1,15 @@
 /* eslint-disable no-useless-catch */
 import { Injectable } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
-import { UsersEntity } from '../../domain/users.entity';
-import { FindAllUserQuery, FindUserByIdQuery } from '../../application/queries';
-import { CreateUserDto } from '../../dto/create.dto';
+import { UsersEntity } from '../domain/users.entity';
+import { FindAllUserQuery, FindUserByIdQuery } from '../application/queries';
+import { CreateUserDto } from '../dto/create.dto';
 import {
   CreateUserCommand,
   DeleteUserCommand,
   UpdateUserCommand,
-} from '../../application/commands';
-import { UpdateUserDto } from '../../dto/update.dto';
+} from '../application/commands';
+import { UpdateUserDto } from '../dto/update.dto';
 import { DeleteResult, UpdateResult } from 'typeorm';
 
 @Injectable()
