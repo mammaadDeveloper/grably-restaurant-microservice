@@ -1,7 +1,9 @@
 {
   "name": "@grably-restaurant-microservice/token-service",
   "version": "0.0.1",
-  "private": true,
+  "dependencies": {
+    "@nestjs/passport": "^11.0.5"
+  },
   "nx": {
     "name": "token-service",
     "targets": {
@@ -42,5 +44,6 @@
         }
       }
     }
-  }
+  },
+  "private": true
 }

@@ -4,7 +4,7 @@ import {
   Entity,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { TokenStautsEnum } from '../infrastructure/tokens.enum';
+import { TokenStautsEnum } from './enums/tokens.enum';
 
 @Entity('tokens')
 export class TokensEntity {
@@ -16,6 +16,9 @@ export class TokensEntity {
 
   @Column()
   token!: string;
+
+  @Column({name: 'user_id'})
+  user!: string;
 
   @Column()
   ip!: string;

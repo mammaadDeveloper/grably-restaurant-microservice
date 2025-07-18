@@ -3,7 +3,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import appConfig from './configs/app.config';
 import { CqrsModule } from '@nestjs/cqrs';
 import { TokensModule } from './modules/tokens/tokens.module';
-import { AuthModule } from './modules/auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import databaseConfig from './configs/database.config';
 
@@ -26,7 +25,6 @@ import databaseConfig from './configs/database.config';
     }),
     CqrsModule.forRoot(),
     TokensModule,
-    AuthModule,
   ]
 })
 export class AppModule {}
