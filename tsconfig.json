@@ -19,10 +19,10 @@
       "path": "./libs/shared"
     },
     {
-      "path": "./apps/auth-service-e2e"
+      "path": "./apps/token-service-e2e"
     },
     {
-      "path": "./apps/auth-service"
+      "path": "./apps/token-service"
     }
   ]
 }

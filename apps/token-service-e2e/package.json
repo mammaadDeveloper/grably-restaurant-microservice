@@ -1,11 +1,11 @@
 {
-  "name": "@grably-restaurant-microservice/auth-service-e2e",
+  "name": "@grably-restaurant-microservice/token-service-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
-    "name": "auth-service-e2e",
+    "name": "token-service-e2e",
     "implicitDependencies": [
-      "auth-service"
+      "token-service"
     ],
     "targets": {
       "e2e": {
@@ -14,12 +14,12 @@
           "{projectRoot}/test-output/jest/coverage"
         ],
         "options": {
-          "jestConfig": "apps/auth-service-e2e/jest.config.ts",
+          "jestConfig": "apps/token-service-e2e/jest.config.ts",
           "passWithNoTests": true
         },
         "dependsOn": [
-          "auth-service:build",
-          "auth-service:serve"
+          "token-service:build",
+          "token-service:serve"
         ]
       }
     }
