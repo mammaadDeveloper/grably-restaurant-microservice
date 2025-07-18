@@ -1,0 +1,27 @@
+{
+  "name": "@grably-restaurant-microservice/menu-service-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "name": "menu-service-e2e",
+    "implicitDependencies": [
+      "menu-service"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/menu-service-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "menu-service:build",
+          "menu-service:serve"
+        ]
+      }
+    }
+  }
+}
