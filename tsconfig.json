@@ -23,6 +23,12 @@
     },
     {
       "path": "./apps/token-service"
+    },
+    {
+      "path": "./apps/menu-service-e2e"
+    },
+    {
+      "path": "./apps/menu-service"
     }
   ]
 }

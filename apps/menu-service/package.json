@@ -1,11 +1,9 @@
 {
-  "name": "@grably-restaurant-microservice/token-service",
+  "name": "@grably-restaurant-microservice/menu-service",
   "version": "0.0.1",
-  "dependencies": {
-    "@nestjs/passport": "^11.0.5"
-  },
+  "private": true,
   "nx": {
-    "name": "token-service",
+    "name": "menu-service",
     "targets": {
       "build": {
         "executor": "nx:run-commands",
@@ -31,19 +29,18 @@
           "build"
         ],
         "options": {
-          "buildTarget": "token-service:build",
+          "buildTarget": "menu-service:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "token-service:build:development"
+            "buildTarget": "menu-service:build:development"
           },
           "production": {
-            "buildTarget": "token-service:build:production"
+            "buildTarget": "menu-service:build:production"
           }
         }
       }
     }
-  },
-  "private": true
+  }
 }

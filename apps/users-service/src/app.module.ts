@@ -20,7 +20,8 @@ import { CqrsModule } from '@nestjs/cqrs';
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
         url: configService.get('db.url'),
-        autoLoadEntities: true,
+        entities: [__dirname + '/../**/*.entity.{ts,js}'],
+        synchronize: true
       }),
     }),
     CqrsModule.forRoot(),
