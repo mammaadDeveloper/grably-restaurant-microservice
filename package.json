@@ -1,6 +1,6 @@
 {
   "name": "@grably-restaurant-microservice/source",
-  "version": "0.0.0",
+  "version": "0.3.0 - alpha",
   "license": "MIT",
   "scripts": {
     "reset": "nx reset",
