@@ -52,5 +52,8 @@
         "command": "docker build -f apps/api-gateway/Dockerfile . -t grably-restaurant-microservice-api-gateway"
       }
     }
+  },
+  "dependencies": {
+    "@nestjs/microservices": "^11.1.6"
   }
 }
