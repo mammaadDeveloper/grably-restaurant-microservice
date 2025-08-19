@@ -1,0 +1,49 @@
+{
+  "name": "@grably-restaurant-microservice/token-service",
+  "version": "0.0.1",
+  "dependencies": {
+    "@nestjs/passport": "^11.0.5"
+  },
+  "nx": {
+    "name": "token-service",
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "webpack-cli build",
+          "args": [
+            "--node-env=production"
+          ]
+        },
+        "configurations": {
+          "development": {
+            "args": [
+              "--node-env=development"
+            ]
+          }
+        }
+      },
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "token-service:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "token-service:build:development"
+          },
+          "production": {
+            "buildTarget": "token-service:build:production"
+          }
+        }
+      }
+    }
+  },
+  "private": true
+}
